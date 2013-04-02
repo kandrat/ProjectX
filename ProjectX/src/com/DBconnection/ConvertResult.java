@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 
 /**
  * @author White kandrat
- * Транслятор результата, принимает на вход Sql запрос, а ответ записывается в ArrayList 
+ * РўСЂР°РЅСЃР»СЏС‚РѕСЂ СЂРµР·СѓР»СЊС‚Р°С‚Р°, РїСЂРёРЅРёРјР°РµС‚ РЅР° РІС…РѕРґ Sql Р·Р°РїСЂРѕСЃ, Р° РѕС‚РІРµС‚ Р·Р°РїРёСЃС‹РІР°РµС‚СЃСЏ РІ ArrayList 
  */
 public class ConvertResult extends Connection {
 	/**
@@ -17,7 +17,7 @@ public class ConvertResult extends Connection {
 	public static Logger logger = Logger.getLogger(ConvertResult.class);
 	static ArrayList<ArrayList<String>> resultTable = new ArrayList<ArrayList<String>>();
 	/**
-	 * Метод принимает Sql запрос, и ответ поподает ArrayList
+	 * РњРµС‚РѕРґ РїСЂРёРЅРёРјР°РµС‚ Sql Р·Р°РїСЂРѕСЃ, Рё РѕС‚РІРµС‚ РїРѕРїРѕРґР°РµС‚ ArrayList
 	 * @param querySQL
 	 * @return resultTable
 	 */

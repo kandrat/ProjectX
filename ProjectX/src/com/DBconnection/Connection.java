@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 
 /**
  * @author White kandrat.
- * Класс передает строку с запросом в PoollConnectionDB
+ * РљР»Р°СЃСЃ РїРµСЂРµРґР°РµС‚ Р·Р°РїСЂРѕСЃ РІ PoollConnectionDB
  */
 public class Connection extends PoollConnectionDB {
 	/**
@@ -19,7 +19,7 @@ public class Connection extends PoollConnectionDB {
 	/**
 	 * @param querySQL
 	 * @return rs
-	 * Принимает строку с запросом. 
+	 * РџРµСЂРµРґР°С‡Р° Р·Р°РїСЂРѕСЃР° Sql . 
 	 */
 	public static ResultSet sqlQuery(String querySQL) {
 		if (datasource == null) {
