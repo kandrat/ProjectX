@@ -30,6 +30,7 @@ public class Index extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();
 		//Start HTML page
+		out.println("<!DOCTYPE html>");
 		out.println("<Html>");
 		out.println("<Head>");
 		out.println("<Title>");
@@ -42,7 +43,9 @@ public class Index extends HttpServlet {
 		out.println(com.ConnectionFramework.JSbootstrap.BootstrapJSincude);
 		//Insert components
 		out.println(com.HTMLcomponents.Navibar.Navibar);
-		
+		out.println(com.HTMLcomponents.Texarea.Textarea);
+		out.println("<br><br>Из метода<br>");
+		out.println("<br><br>Из гетера<br>");
 		out.println("</Body>");
 		out.println("</Html>");
 	}

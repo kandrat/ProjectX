@@ -3,6 +3,7 @@ package com.DBconnection;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -15,14 +16,14 @@ public class ConvertResult extends Connection {
 	 *Include logger
 	 */
 	public static Logger logger = Logger.getLogger(ConvertResult.class);
-	static ArrayList<ArrayList<String>> resultTable = new ArrayList<ArrayList<String>>();
+	static List<List<String>> resultTable = new ArrayList<List<String>>();
 	/**
 	 * Метод принимает Sql запрос, и ответ поподает ArrayList
 	 * @param querySQL
 	 * @return resultTable
 	 */
 	@SuppressWarnings("finally")
-	public ArrayList<ArrayList<String>> convertRStoArLst(String querySQL) {
+	public List<List<String>> convertRStoArLst(String querySQL) {
 
 		try {
 			Connection.sqlQuery(querySQL);

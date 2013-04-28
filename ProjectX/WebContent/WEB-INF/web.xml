@@ -19,4 +19,14 @@
     <servlet-name>Index</servlet-name>
     <url-pattern>/Index</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DBinsert</display-name>
+    <servlet-name>DBinsert</servlet-name>
+    <servlet-class>com.DBproc.DBinsert</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DBinsert</servlet-name>
+    <url-pattern>/DBinsert</url-pattern>
+  </servlet-mapping>
 </web-app>

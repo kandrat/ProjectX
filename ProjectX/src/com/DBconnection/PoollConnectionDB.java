@@ -39,7 +39,7 @@ public class PoollConnectionDB {
 
 		try {
 			datasource = (DataSource) initContext
-					.lookup("java:comp/env/jdbc/TestProject");
+					.lookup("java:comp/env/jdbc/ProjectX");
 		} catch (NamingException e1) {
 			logger.error("Initial DataSource Error " + e1.getMessage());
 		}
