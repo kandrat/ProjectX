@@ -10,16 +10,17 @@ import com.DBconnection.ConvertResult;
  */
 public class SQLselect {
 	// Переменная для хранения ответа из базы
-	private List<List<String>> listMaind;
+	private List<List<String>> listMind = null;
+	private int listMindSize = 0;
 	// Обьявление обьекта класса ConvertResult
 	ConvertResult resultQuery = new ConvertResult();
 
 	/**
 	 * Конструктор класса
 	 */
-	public SQLselect() {
-
-		listMaind = resultQuery.convertRStoArLst("SELECT * FROM test_table");
+	public SQLselect() { 
+		listMind = resultQuery.convertRStoArLst("SELECT * FROM test_table");
+		listMindSize = listMind.size();
 	}
 
 	/**
@@ -28,16 +29,23 @@ public class SQLselect {
 	 * @return the listMind
 	 */
 	public List<List<String>> getListMind() {
-		return listMaind;
+		return listMind;
+	}
+
+	/**
+	 * @return listMaindSize
+	 */
+	public int getListMindSize() {
+		return listMindSize;
 	}
 
 	/**
 	 * Метод set для переменной ListMind
 	 * 
-	 * @param listMaind
+	 * @param listMind
 	 */
-	public void setListMaind(List<List<String>> listMaind) {
-		this.listMaind = listMaind;
+	public void setListMind(List<List<String>> listMind) {
+		this.listMind = listMind;
 	}
 
 }

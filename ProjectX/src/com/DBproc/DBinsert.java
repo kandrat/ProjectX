@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import com.Sql.SQLupdate;
 
 /**
@@ -32,11 +31,14 @@ public class DBinsert extends HttpServlet {
 			HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		response.setCharacterEncoding("UTF-8");
+		
 		// request param in Jsp с явным указанием 
 		String TextMind = new String (request.getParameter("TextMind").getBytes("ISO-8859-1")); 
-		String TextAuthor = new String (request.getParameter("TextAuthor").getBytes("ISO-8859-1")); 
-		System.out.println(TextAuthor);
-		System.out.println(TextMind);
+		String TextAuthor = new String (request.getParameter("TextAuthor").getBytes("ISO-8859-1"));
+		String insertStat = null;
+		String insertStatElse = null;
+		System.out.println("Автор:"+TextAuthor);
+		System.out.println("Мысль:"+TextMind);
 		/* Блок проверки. Если длинна строки > 5, 
 		 * то выполнить запись, инача перевод на .jsp
 		*/
@@ -45,18 +47,22 @@ public class DBinsert extends HttpServlet {
 				// Отправка данных в запрос через обьект INSERT
 				SQLupdate INSERT = new SQLupdate();
 				INSERT.dbinsert(TextMind, TextAuthor);
-				// Перевод на ProcInsert
+				// Перевод на Insert
+				insertStat="ok";
+				request.setAttribute("inS", insertStat);
 				RequestDispatcher dispacher = request
-						.getRequestDispatcher("/ProcInsert.jsp");
+						.getRequestDispatcher("/Insert.jsp");
 				dispacher.forward(request, response);
 			} catch (Exception NullPointerException) {
 				RequestDispatcher dispacher = request
 						.getRequestDispatcher("/Error.jsp");
 				dispacher.forward(request, response);
 			}
-		}else
-		{RequestDispatcher dispacher = request
-				.getRequestDispatcher("/Error.jsp");
+		}else{
+			insertStatElse ="error";
+			request.setAttribute("inSe", insertStatElse);
+			RequestDispatcher dispacher = request
+				.getRequestDispatcher("/Insert.jsp");
 		dispacher.forward(request, response); }
 	}
 }

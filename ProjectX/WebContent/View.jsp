@@ -1,4 +1,4 @@
-<jsp:useBean id="user" class="com.Sql.SQLselect" />
+<jsp:useBean id="TableView" class="com.Sql.SQLselect" />
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
@@ -8,6 +8,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>View</title>
+<jsp:include page="HTMLcomponent/BootstrapInc.html" flush="true" />
 </head>
 <div class="container-fluid">
 	<div class="row-fluid">
@@ -18,14 +19,13 @@
 			</p>
 			<table class="table table-striped">
 				<tbody>
-					<c:forEach var="user" items="${user.listMind}">
+					<c:forEach var="first" items="${TableView.listMind}">
 						<tr>
-							<c:forEach var="user2" items="${user}">
-								<td><c:out value="${user2}" />
+							<c:forEach var="second" items="${first}">
+								<td><c:out value="${second}" />
 								<td>
 							</c:forEach>
-
-						</tr>
+   						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
